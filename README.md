@@ -12,6 +12,8 @@ Technology Stack
 •	JavaScript: The website will be powered by JavaScript, a high-level programming language used to create dynamic and interactive web pages.
 •	Third-party API: The website will use a third-party API to obtain exchange rate data, so it can provide the most accurate and up-to-date information to users.
 
+5	Binance	24 hr crypto data	https://api2.binance.com/api/v3/ticker/24hr
+
 
 
 
