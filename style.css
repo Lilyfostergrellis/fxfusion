@@ -91,3 +91,22 @@ footer p {
 
 /******** NEWS BULLETIN CARDS ***********/
 
+/******** LATEST NEWS PROVISIONAL STYLE ***********/
+
+.articles {
+
+	display: flex;
+	flex-wrap: wrap;
+	
+}
+
+.news {
+	width: 250px;
+	margin: 5px;
+	padding: 10px;
+	border: 1px solid rgb(255, 255, 255);
+}
+
+img {
+	max-width: 230px;
+}
