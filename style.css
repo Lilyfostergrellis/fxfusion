@@ -91,3 +91,10 @@ footer p {
 
 /******** NEWS BULLETIN CARDS ***********/
 
+
+.card{
+  text-align: center;
+  align-items: center;
+  justify-content: space-evenly;
+
+}
