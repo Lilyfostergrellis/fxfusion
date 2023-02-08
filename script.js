@@ -50,7 +50,7 @@ submitBtn.addEventListener("click", function (event) {
   }
 // string interpolation ${variable that has data from your dropdowns}ie  usd euro
   const host = 'api.frankfurter.app';
-  fetch(`https://${host}/latest?amount=10&from=GBP&to=USD`)
+  fetch(`https://${host}/latest?amount=${amount}&from=${fromCurrency}&to=${toCurrency}`)
     .then(resp => resp.json())
     .then((data) => {
       console.log(`${data.rates.USD} USD`)
