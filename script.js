@@ -59,7 +59,28 @@ submitBtn.addEventListener("click", function (event) {
       console.log(data.rates[toCurrency] + '' + toCurrency);
     });
 
-
+    /* localStorage.setItem("conversion", {from:"eur", to:"usd", amountFrom:500, result:536.75})
+  
+    localStorage.getItem("conversion")
+    "[object Object]"
+    localStorage.setItem("conversion", JSON.stringify({from:"eur", to:"usd", amountFrom:500, result:536.75}))
+    undefined
+    localStorage.getItem("conversion")
+    "{\"from\":\"eur\",\"to\":\"usd\",\"amountFrom\":500,\"result\":536.75}"
+    JSON.parse(localStorage.getItem("conversion") 
+    < SyntaxError: Unexpected end of script
+    > JSON.parse(localStorage.getItem("conversion"))
+    < {from: "eur", to: "usd", amountFrom: 500, result: 536.75}
+    > document.querySelector("#fromCurrency").value
+    < "EUR"
+    > localStorage.setItem("conversion", JSON.stringify({from:document.querySelector("#fromCurrency").value, to:"usd", amountFrom:500, result:536.75}))
+    < undefined
+    > JSON.parse(localStorage.getItem("conversion"))
+    < {from: "EUR", to: "usd", amountFrom: 500, result: 536.75}
+    > localStorage.setItem("conversion", JSON.stringify({from:document.querySelector("#fromCurrency").value, to:"usd", amountFrom:500, result:536.75}))
+    < undefined
+    > JSON.parse(localStorage.getItem("conversion"))
+    < {from: "GBP", to: "usd", amountFrom: 500, result: 536.75} */
 
 
 
