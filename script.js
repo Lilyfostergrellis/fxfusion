@@ -44,18 +44,21 @@ submitBtn.addEventListener("click", function (event) {
   const toCurrency = document.querySelector("#toCurrency").value;
   const amount = parseFloat(document.querySelector("#amount").value);
 
-  if (amount < 0) {
-    document.querySelector("#convertedAmount").textContent = "Error: Enter a positive number";
-    return;
-  }
+  
 // string interpolation ${variable that has data from your dropdowns}ie  usd euro
   const host = 'api.frankfurter.app';
   fetch(`https://${host}/latest?amount=${amount}&from=${fromCurrency}&to=${toCurrency}`)
     .then(resp => resp.json())
     .then((data) => {
+      if (amount < 0) {
+        document.querySelector("#convertedAmount").textContent = "Error: Enter a positive number";
+        return;
+      }
+      document.querySelector("#convertedAmount").textContent=`${data.rates[toCurrency]} ${toCurrency}`;
+    });
       console.log(data.rates[toCurrency] + '' + toCurrency);
     });
-});
+
 
 
 
