@@ -53,7 +53,7 @@ submitBtn.addEventListener("click", function (event) {
   fetch(`https://${host}/latest?amount=${amount}&from=${fromCurrency}&to=${toCurrency}`)
     .then(resp => resp.json())
     .then((data) => {
-      console.log(`${data.rates.USD} USD`)
+      console.log(data.rates[toCurrency] + '' + toCurrency);
     });
 });
 
