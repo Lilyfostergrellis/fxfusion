@@ -139,7 +139,7 @@ p.result {
   align-items: center;
 }
 
-/******** NEWS BULLETIN CARDS ***********/
+/******** NEWS BULLETIN CARD STYLING ***********/
 
 .news-bulletin {
   display: flex;
@@ -156,9 +156,6 @@ p.result {
   border-radius: 10px;
   text-align: center;
 }
-
-
-
 
 
 .card {
