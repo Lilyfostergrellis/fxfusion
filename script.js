@@ -1,5 +1,3 @@
-
-
 const API_KEY = "a075e9c1831be450387ebe22f1874d9a";
 const API_URL = `https://gnews.io/api/v4/top-headlines?category=business&lang=en&country=eng+&apikey=${API_KEY}`;
 
@@ -50,7 +48,7 @@ submitBtn.addEventListener("click", function (event) {
     document.querySelector("#convertedAmount").textContent = "Error: Enter a positive number";
     return;
   }
-
+// string interpolation ${variable that has data from your dropdowns}ie  usd euro
   const host = 'api.frankfurter.app';
   fetch(`https://${host}/latest?amount=10&from=GBP&to=USD`)
     .then(resp => resp.json())
