@@ -1,38 +1,66 @@
-/******CURRENCY CONVERSION *******/
+const API_KEY = "a075e9c1831be450387ebe22f1874d9a";
+const API_URL = `https://gnews.io/api/v4/top-headlines?category=business&lang=en&country=eng+&apikey=${API_KEY}`;
 
 
+const createNews = (article) => {
+  const div = document.createElement("div");
+  div.className = "news";
+  div.innerHTML = `
+      <h2>${article.title}</h2>
+      <img src="${article.image}" alt="${article.title}" />
+    `;
 
-/********* DAILY NEWS BULLETINS **********/
+  return div;
+};
 
-let apikey = 'd6a5e9d948e4965654dfa70f78b94ca0';
-let category = 'business';
-//The catagory can be changed to one of five, see API documentation for other options
-let url = 'https://gnews.io/api/v4/top-headlines?category=' + category + '&apikey=' + apikey + '&lang=en&country=en&max=6';
-//language english, country of choice for top trending google articles is england, maximum results returned is 6.
+const receivedNews = (newsData) => {
+  const articlesDiv = document.querySelector(".articles");
+  const news = newsData.articles.map(createNews);
+  news.forEach((news) => articlesDiv.appendChild(news));
+};
 
-fetch(url)
-  .then(function (response) {
+fetch(API_URL)
+  .then((response) => {
+    // if (!response.ok) {
+    //   throw new Error(`Failed to fetch news: ${response.statusText}`);
+    // }
     return response.json();
   })
-  .then(function (data) {
-    articles = data.articles;
-
-    for (i = 0; i < articles.length; i++) {
-      // articles[i].title
-      console.log("Title: " + articles[i]['title']);
-      // articles[i].description
-      console.log("Description: " + articles[i]['description']);
-      // You can replace {property} below with any of the article properties returned by the API.
-      // articles[i].{property}
-      // console.log(articles[i]['{property}']);
-    }
+  .then(newsData => {
+    
+    console.log(newsData)
+    receivedNews(newsData)})
+  .catch((error) => {
+    console.error(error);
   });
 
-function renderNewsResults(dailyNews){
+
+const submitBtn = document.querySelector("#submitBtn");
+
+submitBtn.addEventListener("click", function (event) {
+  event.preventDefault();
+
+  const fromCurrency = document.querySelector("#fromCurrency").value;
+  const toCurrency = document.querySelector("#toCurrency").value;
+  const amount = parseFloat(document.querySelector("#amount").value);
+
+  if (amount < 0) {
+    document.querySelector("#convertedAmount").textContent = "Error: Enter a positive number";
+    return;
+  }
+// string interpolation ${variable that has data from your dropdowns}ie  usd euro
+  const host = 'api.frankfurter.app';
+  fetch(`https://${host}/latest?amount=10&from=GBP&to=USD`)
+    .then(resp => resp.json())
+    .then((data) => {
+      console.log(`${data.rates.USD} USD`)
+    });
+});
 
 
-};
-//new function to display the top daily data
+
+
+
 
 
 
