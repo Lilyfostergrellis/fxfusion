@@ -55,9 +55,16 @@ submitBtn.addEventListener("click", function (event) {
         return;
       }
       document.querySelector("#convertedAmount").textContent=`${data.rates[toCurrency]} ${toCurrency}`;
+      localStorage.setItem("conversion", JSON.stringify({
+        from: fromCurrency,
+        to: toCurrency,
+        amountFrom: amount,
+        result: data.rates[toCurrency]
+      }));
     });
-      console.log(data.rates[toCurrency] + '' + toCurrency);
     });
+
+    
 
     /* localStorage.setItem("conversion", {from:"eur", to:"usd", amountFrom:500, result:536.75})
   
