@@ -39,7 +39,7 @@ fetch(API_URL)
     if(localStorage["conversion"] && localStorage["conversion"].length > 0){
       const previousConversion = JSON.parse(localStorage.getItem("conversion"));
       document.querySelector("#lastTransaction").textContent =
-          `Previous transaction from: ${previousConversion.amountFrom} ${previousConversion.from} to: ${previousConversion.result} ${previousConversion.to}`;
+          `Previous conversion from: ${previousConversion.amountFrom} ${previousConversion.from} to: ${previousConversion.result} ${previousConversion.to}`;
     }
     else return false;
   };
