@@ -85,6 +85,7 @@ button[type="submit"] {
   font-size: 18px;
   background-color: #fff;
   transition: all 0.2s;
+  align-items: flex-start;
 }
 
 button[type="submit"]:hover {
@@ -92,6 +93,8 @@ button[type="submit"]:hover {
   color: #fff;
   cursor: pointer;
 }
+
+
 
 #convertedAmount {
   margin-top: 50px;
@@ -116,28 +119,40 @@ footer p {
 
 }
 
-.result {
-  transform: perspective(500px) rotateX(30deg);
-  box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.3);
-  transition: transform 0.3s;
-  text-transform: uppercase;
-  
-}
-
-.result:hover {
-  transform: perspective(500px) rotateX(0);
-  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.5);
-  cursor: pointer;
-}
 
 p.result {
+  font-size: 1.5em;
+  color: #333;
   text-align: center;
-  margin: 0 auto;
+  margin: 50px auto;
   width: fit-content;
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: #f2f2f2;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease-in-out;
 }
+
+p.result:hover {
+  transform: scale(1.05);
+  box-shadow: 1px 1px 15px rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+}
+
+#convertedAmount {
+  font-weight: bold;
+  color: #00bfff;
+  margin-left: 10px;
+  padding: 20px;
+
+}
+
+}
+
+
 
 /******** NEWS BULLETIN CARD STYLING ***********/
 
