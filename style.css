@@ -203,6 +203,17 @@ p.result {
   transition: transform 0.2s ease-in-out;
 }
 
+.news::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(23, 22, 26, 0.67);
+}
+
 .news:hover {
   transform: scale(1.03);
   cursor: pointer;
@@ -214,14 +225,14 @@ p.result {
   font-size: 1.2rem;
   font-weight: bold;
   margin-top: 0;
+  pointer-events: auto;
 }
 
 .news img {
   max-width: 100%;
   max-height: 100%;
   display: block;
-  opacity: 0.4;
-  filter: alpha(opacity=40);
+
 }
 
 .news .details {
