@@ -8,7 +8,6 @@ const createNews = (article) => {
     <h2><a href="${article.url}" target="_blank">${article.title}</a></h2>
     <img src="${article.image}" alt="${article.title}" />
   `;
-
   return div;
 };
 
